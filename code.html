@@ -1,21 +1,34 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel="stylesheet" href="style.css">
-    <script src="code.js"> </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="code.js"></script>
 </head>
 <body>
     <h1>Paint your own Picture</h1>
-    <div>Set Width
-        <input type="text" onchange="setWidth(this.value)" placeholder="Set Width"/>
+    <div>
+        Set Width
+        <input type="text" id="widthInput" placeholder="Set Width"/>
         Set Height
-        <input type="text" onchange="setHeight(this.value)" placeholder="Set Height"/>
-        
+        <input type="text" id="heightInput" placeholder="Set Height"/>
+        <button onclick="applySize()">Apply</button>
         <hr>
     </div>
-    <canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX, event.offsetY)" onmouseup="endPaint()" > </canvas>
+    <canvas id="canvas1"></canvas>
+    <p id="brushColor">Brush Color
+        <input type="color" value="#000" onchange="changeColor(this.value)"/>
+        <span>Brush Size
+            <input type="range" id="sizeInput" min="1" max="50" value="50" oninput="resizeBrush(this.value)"/>
+            <output id="sizeOutput">50</output>
+        </span>
+    </p>
+    <p>
+        <input type= "button" id = "clear" value="Clear Canvas"  onclick="clearCanvas()" />
+    </p>
+    
 </body>
 </html>
