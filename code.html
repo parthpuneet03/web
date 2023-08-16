@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="code.js"> </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Paint your own Picture</h1>
+    <div>Set Width
+        <input type="text" onchange="setWidth(this.value)" placeholder="Set Width"/>
+        Set Height
+        <input type="text" onchange="setHeight(this.value)" placeholder="Set Height"/>
+        
+        <hr>
+    </div>
+    <canvas id="canvas1" onmousedown="startPaint()" onmousemove="doPaint(event.offsetX, event.offsetY)" onmouseup="endPaint()" > </canvas>
+</body>
+</html>
